@@ -40,7 +40,7 @@ export default function JobCard({ job }) {
             </ul>
 
 
-            <div className="mt-10">
+            <div className="mt-8">
                 <button className="w-full py-2 bg-[#00AAFF] text-white rounded-lg">
                     Apply Now
                 </button>

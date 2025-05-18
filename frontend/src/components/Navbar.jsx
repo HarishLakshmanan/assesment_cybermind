@@ -7,10 +7,16 @@ import jt2 from '../assets/jt2.svg';
 import loc from '../assets/loc.svg';
 import * as Slider from '@radix-ui/react-slider';
 
-export default function Navbar({ setSearchTerm, setLocationFilter, setJobTypeFilter }) {
+export default function Navbar({ setSearchTerm,
+  setLocationFilter,
+  setJobTypeFilter,
+  minSalary,
+  maxSalary,
+  setMinSalary,
+  setMaxSalary }) {
   const [showModal, setShowModal] = useState(false);
-  const [minVal, setMinVal] = useState(20000);
-  const [maxVal, setMaxVal] = useState(70000);
+  // const [minVal, setMinVal] = useState(0);
+  // const [maxVal, setMaxVal] = useState(90000);
 
   return (
     <>
@@ -18,33 +24,13 @@ export default function Navbar({ setSearchTerm, setLocationFilter, setJobTypeFil
         {/* Navigation */}
         <nav className="absolute top-[21px] left-[275px] w-[890px] h-[80px] border border-gray-200 rounded-[122px] bg-white shadow-lg px-6 py-3 flex items-center justify-between gap-8 ms-8">
           <img src={logo} alt="Logo" className="w-8 h-8" />
-          <div className="flex flex-row gap-4 text-[16px] font-semibold leading-[100%] tracking-[0] text-gray-800">
-            <Link to="/">
-              <button className="w-[102px] h-[48px] p-[5px] rounded-[12px] flex items-center justify-center hover:bg-gray-100 transition">
-                Home
-              </button>
-            </Link>
-            <Link to="/jobs">
-              <button className="w-[102px] h-[48px] p-[5px] rounded-[12px] flex items-center justify-center hover:bg-gray-100 transition">
-                Find Jobs
-              </button>
-            </Link>
-            <Link to="/talents">
-              <button className="w-[102px] h-[48px] p-[5px] rounded-[12px] flex items-center justify-center hover:bg-gray-100 transition">
-                Find Talents
-              </button>
-            </Link>
-            <Link to="/about">
-              <button className="w-[102px] h-[48px] p-[5px] rounded-[12px] flex items-center justify-center hover:bg-gray-100 transition">
-                About us
-              </button>
-            </Link>
-            <Link to="/testimonials">
-              <button className="w-[102px] h-[48px] p-[5px] rounded-[12px] flex items-center justify-center hover:bg-gray-100 transition">
-                Testimonials
-              </button>
-            </Link>
-          </div>
+          <ul className="flex flex-row gap-18 text-sm font-medium text-gray-800">
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/jobs">Find Jobs</Link></li>
+            <li><Link to="/talents">Find Talents</Link></li>
+            <li><Link to="/about">About us</Link></li>
+            <li><Link to="/testimonials">Testimonials</Link></li>
+          </ul>
 
 
 
@@ -99,17 +85,17 @@ export default function Navbar({ setSearchTerm, setLocationFilter, setJobTypeFil
         <div className="w-full p-3">
           <div className="flex justify-between text-sm font-medium mb-2">
             <span>Salary Per Month</span>
-            <span>₹{(minVal / 1000).toFixed(0)}k - ₹{(maxVal / 1000).toFixed(0)}k</span>
+            <span>₹{(minSalary / 1000).toFixed(0)}k - ₹{(maxSalary / 1000).toFixed(0)}k</span>
           </div>
           <div className="flex items-center gap-2 w-full">
             <Slider.Root
-              min={10000}
+              min={0}
               max={90000}
               step={1000}
-              value={[minVal, maxVal]}
+              value={[minSalary, maxSalary]}
               onValueChange={(val) => {
-                setMinVal(val[0]);
-                setMaxVal(val[1]);
+                setMinSalary(val[0]);
+                setMaxSalary(val[1]);
               }}
               className="relative flex items-center w-full h-5"
             >

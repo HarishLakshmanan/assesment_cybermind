@@ -55,30 +55,32 @@ export default function CreateJobModal({ isOpen, onClose }) {
                 <form className="grid grid-cols-2 gap-4" onSubmit={handleSubmit}>
                     <div className="flex flex-col gap-1">
                         <p>Job Title</p>
-                        <input name="title" value={formData.title} onChange={handleChange} type="text" placeholder="Job Title" className={`border rounded px-4 py-2 transition-colors duration-200 ${formData.title ? 'border-[#222222]' : 'border-[#BCBCBC]'
+                        <input name="title" value={formData.title} onChange={handleChange} type="text" placeholder="Job Title" className={`border-2 rounded px-4 py-2 transition-colors duration-200 ${formData.title ? 'border-[#222222]' : 'border-[#BCBCBC]'
                             }`} />
                     </div>
                     <div className="flex flex-col gap-1">
                         <p>Company Name</p>
-                        <input name="company" value={formData.company} onChange={handleChange} type="text" placeholder="Amazon, Microsoft, Swiggy" className={`border rounded px-4 py-2 transition-colors duration-200 ${formData.company ? 'border-[#222222]' : 'border-[#BCBCBC]'
+                        <input name="company" value={formData.company} onChange={handleChange} type="text" placeholder="Amazon, Microsoft, Swiggy" className={`border-2 rounded px-4 py-2 transition-colors duration-200 ${formData.company ? 'border-[#222222]' : 'border-[#BCBCBC]'
                             }`} />
                     </div>
 
                     <div className="flex flex-col gap-1">
                         <p>Location</p>
-                        <select name="location" value={formData.location} onChange={handleChange} className={`border  rounded px-4 py-2 transition-colors duration-200 ${formData.location ? 'border-[#222222]' : 'border-[#BCBCBC]'
-                            }`}>
-                            <option value="">Choose Preferred Location</option>
-                            <option value="Bengaluru">Bengaluru</option>
-                            <option value="Chennai">Chennai</option>
-                            <option value="Coimbatore">Coimbatore</option>
-                            <option value="Hyderabad">Hyderabad</option>
-                        </select>
+                        <input
+                            type="text"
+                            name="location"
+                            value={formData.location}
+                            onChange={handleChange}
+                            placeholder="Enter preferred location"
+                            className={`border-2 rounded px-4 py-2 transition-colors duration-200 ${formData.location ? 'border-[#222222]' : 'border-[#BCBCBC]'
+                                }`}
+                        />
                     </div>
+
 
                     <div className="flex flex-col gap-1">
                         <p>Job Type</p>
-                        <select name="jobType" value={formData.jobType} onChange={handleChange} className={`border  rounded px-4 py-2 transition-colors duration-200 ${formData.jobType ? 'border-[#222222]' : 'border-[#BCBCBC]'
+                        <select name="jobType" value={formData.jobType} onChange={handleChange} className={`border-2  rounded px-4 py-2 transition-colors duration-200 ${formData.jobType ? 'border-[#222222]' : 'border-[#BCBCBC]'
                             }`}>
                             <option value="">Select Type</option>
                             <option value="Internship">Internship</option>
@@ -91,23 +93,23 @@ export default function CreateJobModal({ isOpen, onClose }) {
                     <div className="flex flex-col gap-1">
                         <p>Salary Range</p>
                         <div className="flex gap-2">
-                            <input name="salaryMin" value={formData.salaryMin} onChange={handleChange} type="number" placeholder="₹0" className={`border rounded px-4 py-2 w-full transition-colors duration-200 ${formData.salaryMin ? 'border-[#222222]' : 'border-[#BCBCBC]'
+                            <input name="salaryMin" value={formData.salaryMin} onChange={handleChange} type="number" placeholder="₹0" className={`border-2 rounded px-4 py-2 w-full transition-colors duration-200 ${formData.salaryMin ? 'border-[#222222]' : 'border-[#BCBCBC]'
                                 }`} />
-                            <input name="salaryMax" value={formData.salaryMax} onChange={handleChange} type="number" placeholder="₹12,00,000" className={`border rounded px-4 py-2 w-full transition-colors duration-200 ${formData.salaryMax ? 'border-[#222222]' : 'border-[#BCBCBC]'
+                            <input name="salaryMax" value={formData.salaryMax} onChange={handleChange} type="number" placeholder="₹12,00,000" className={`border-2 rounded px-4 py-2 w-full transition-colors duration-200 ${formData.salaryMax ? 'border-[#222222]' : 'border-[#BCBCBC]'
                                 }`} />
                         </div>
                     </div>
 
                     <div className="flex flex-col gap-1">
                         <p>Application Deadline</p>
-                        <input name="deadline" value={formData.deadline} onChange={handleChange} type="date" className={`border  rounded px-4 py-2 transition-colors duration-200 ${formData.deadline ? 'border-[#222222]' : 'border-[#BCBCBC]'
+                        <input name="deadline" value={formData.deadline} onChange={handleChange} type="date" className={`border-2  rounded px-4 py-2 transition-colors duration-200 ${formData.deadline ? 'border-[#222222]' : 'border-[#BCBCBC]'
                             }`} />
                     </div>
 
                     <div className="col-span-2 flex flex-col gap-1">
                         <p>Job Description</p>
-                        <textarea name="description" value={formData.description} onChange={handleChange} className={`w-full h-30 px-4 pt-2 border rounded transition-colors duration-200 ${formData.description ? 'border-[#222222]' : 'border-[#BCBCBC]'
-                            }`} placeholder="Please share a description..." />
+                        <textarea name="description" value={formData.description} onChange={handleChange} className={`w-full h-30 px-4 pt-2 border-2 rounded transition-colors duration-200 ${formData.description ? 'border-[#222222]' : 'border-[#BCBCBC]'
+                            }`} placeholder="Please share a description to let the candidate know more about the job role" />
                     </div>
 
                     <div className="col-span-2 flex justify-between mt-4">
