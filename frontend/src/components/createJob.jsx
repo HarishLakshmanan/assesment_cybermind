@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import vet from '../assets/Vector.svg'
+import vet1 from '../assets/Vector1.svg'
 
 export default function CreateJobModal({ isOpen, onClose }) {
     const [formData, setFormData] = useState({
@@ -49,7 +50,7 @@ export default function CreateJobModal({ isOpen, onClose }) {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-sm">
-            <div className="bg-white rounded-xl p-6 w-full max-w-2xl shadow-lg relative">
+            <div className="bg-white rounded-xl p-6 w-300 h-160 max-w-3xl shadow-lg relative">
                 <h2 className="text-xl font-semibold mb-4 text-center">Create Job Opening</h2>
 
                 <form className="grid grid-cols-2 gap-4" onSubmit={handleSubmit}>
@@ -93,10 +94,36 @@ export default function CreateJobModal({ isOpen, onClose }) {
                     <div className="flex flex-col gap-1">
                         <p>Salary Range</p>
                         <div className="flex gap-2">
-                            <input name="salaryMin" value={formData.salaryMin} onChange={handleChange} type="number" placeholder="₹0" className={`border-2 rounded px-4 py-2 w-full transition-colors duration-200 ${formData.salaryMin ? 'border-[#222222]' : 'border-[#BCBCBC]'
-                                }`} />
-                            <input name="salaryMax" value={formData.salaryMax} onChange={handleChange} type="number" placeholder="₹12,00,000" className={`border-2 rounded px-4 py-2 w-full transition-colors duration-200 ${formData.salaryMax ? 'border-[#222222]' : 'border-[#BCBCBC]'
-                                }`} />
+                            <div className="relative w-full">
+                                <img src={vet1} alt="icon" className=" absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4" />
+                                <input
+                                    name="salaryMin"
+                                    value={formData.salaryMin}
+                                    onChange={handleChange}
+                                    type="number"
+                                    placeholder="₹0"
+                                    className={`pl-10 pr-3 py-2 w-full border-2 rounded transition-colors duration-200 ${formData.salaryMin ? 'border-[#222222]' : 'border-[#BCBCBC]'
+                                        }`}
+                                />
+                            </div>
+
+                            <div className="relative w-full">
+                                <img
+                                    src={vet1}
+                                    alt="icon"
+                                    className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4"
+                                />
+                                <input
+                                    name="salaryMax"
+                                    value={formData.salaryMax}
+                                    onChange={handleChange}
+                                    type="number"
+                                    placeholder="₹12,00,000"
+                                    className={`pl-10 pr-3 py-2 w-full border-2 rounded transition-colors duration-200 ${formData.salaryMax ? 'border-[#222222]' : 'border-[#BCBCBC]'
+                                        }`}
+                                />
+                            </div>
+
                         </div>
                     </div>
 
@@ -113,7 +140,10 @@ export default function CreateJobModal({ isOpen, onClose }) {
                     </div>
 
                     <div className="col-span-2 flex justify-between mt-4">
-                        <button type="button" className="px-4 py-2 border rounded">Save Draft</button>
+                        <button type="button" className="flex items-center gap-2 px-4 py-2 border rounded">
+                            Save Draft
+                            <img className="w-2" src={vet} alt="icon" />
+                        </button>
                         <button type="submit" className="bg-blue-500 text-white px-6 py-2 rounded shadow">Publish »</button>
                     </div>
                 </form>

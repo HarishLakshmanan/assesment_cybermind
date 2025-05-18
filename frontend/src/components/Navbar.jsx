@@ -22,14 +22,14 @@ export default function Navbar({ setSearchTerm,
     <>
       <div className="w-[1440px] h-[214px] grid grid-cols-4 lg:flex-1 gap-4 mt-30 mx-auto">
         {/* Navigation */}
-        <nav className="absolute top-[21px] left-[275px] w-[890px] h-[80px] border border-gray-200 rounded-[122px] bg-white shadow-lg px-6 py-3 flex items-center justify-between gap-8 ms-8">
+        <nav className="absolute top-[21px] left-[275px] w-[890px] h-[80px] border border-gray-200 rounded-[122px] bg-white shadow-lg px-6 py-3 flex items-center justify-between gap-6 ms-8">
           <img src={logo} alt="Logo" className="w-8 h-8" />
-          <ul className="flex flex-row gap-18 text-sm font-medium text-gray-800">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/jobs">Find Jobs</Link></li>
-            <li><Link to="/talents">Find Talents</Link></li>
-            <li><Link to="/about">About us</Link></li>
-            <li><Link to="/testimonials">Testimonials</Link></li>
+          <ul className="flex flex-row gap-18 text-medium font-medium text-gray-800">
+            <li className=' '><Link to="/">Home</Link></li>
+            <li className=' '><Link to="/jobs">Find Jobs</Link></li>
+            <li className=' '><Link to="/talents">Find Talents</Link></li>
+            <li className=' '><Link to="/about">About us</Link></li>
+            <li className=' '><Link to="/testimonials">Testimonials</Link></li>
           </ul>
 
 
