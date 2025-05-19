@@ -82,7 +82,7 @@ export default function Navbar({ setSearchTerm,
         </div>
 
         {/* Salary Range - for future implementation */}
-        <div className="w-full p-3">
+        <div className="w-full ">
           <div className="flex justify-between text-sm font-medium mb-2">
             <span>Salary Per Month</span>
             <span>₹{(minSalary / 1000).toFixed(0)}k - ₹{(maxSalary / 1000).toFixed(0)}k</span>
